@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best cars in the world</title>
+</head>
+<body>
+<div th:if="${allCars}">
+    <h2>Список всех автомобилей:</h2>
+    <div th:each="car : ${allCars}">
+        <p th:text="${car.getMake()} + ' ' + ${car.getModel()} + ' ' + ${car.getSeries()}">Car info</p>
+    </div>
+</div>
+<div th:if="${countCars != null and countCars.size() > 0}">
+    <h2>Список нескольких автомобилей:</h2>
+    <div th:each="car : ${countCars}">
+        <p th:text="${car.getMake()} + ' ' + ${car.getModel()} + ' ' + ${car.getSeries()}">Car info</p>
+    </div>
+</div>
+</body>
+</html>
