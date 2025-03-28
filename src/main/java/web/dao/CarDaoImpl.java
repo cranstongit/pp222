@@ -1,7 +1,7 @@
-package web.DAO;
+package web.dao;
 
 import org.springframework.stereotype.Component;
-import web.Model.Car;
+import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class CarDAOImpl implements CarDAO {
+public class CarDaoImpl implements CarDao {
 
     List<Car> cars = new ArrayList<>(Arrays.asList(
             new Car("Honda", "Accord", 100),
@@ -18,7 +18,7 @@ public class CarDAOImpl implements CarDAO {
             new Car("Toyota", "Camry", 400),
             new Car("KIA", "Rio II", 500)));
 
-    public CarDAOImpl() {
+    public CarDaoImpl() {
     }
 
     @Override

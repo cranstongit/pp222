@@ -1,27 +1,27 @@
-package web.Service;
+package web.service;
 
 import org.springframework.stereotype.Service;
-import web.Model.Car;
-import web.DAO.CarDAO;
+import web.model.Car;
+import web.dao.CarDao;
 
 import java.util.List;
 
 @Service
 public class CarServiceImpl implements CarService {
 
-    private final CarDAO carDAO;
+    private final CarDao carDao;
 
-    public CarServiceImpl(CarDAO carDAO) {
-        this.carDAO = carDAO;
+    public CarServiceImpl(CarDao carDao) {
+        this.carDao = carDao;
     }
 
     @Override
     public List<Car> getAllCars() {
-        return carDAO.getAllCars();
+        return carDao.getAllCars();
     }
 
     @Override
     public List<Car> getSomeCars(int count) {
-        return carDAO.getSomeCars(count);
+        return carDao.getSomeCars(count);
     }
 }
